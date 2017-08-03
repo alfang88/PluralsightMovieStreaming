@@ -5,6 +5,11 @@ using MovieStreaming.Common;
 using MovieStreaming.Common.Actors;
 using MovieStreaming.Common.Messages;
 using Serilog;
+using Akka.DI.CastleWindsor;
+using Akka.DI.Core;
+using Castle.MicroKernel.Registration;
+using Castle.Windsor;
+using MovieStreaming.Common.Statistics;
 
 namespace MovieStreaming
 {
@@ -14,7 +19,15 @@ namespace MovieStreaming
 
         static void Main(string[] args)
         {
+            var container = new WindsorContainer();
+
+            container.Register(Component.For<ITrendingMovieAnalyzer>().ImplementedBy<SimpleTrendingMovieAnalyzer>());
+            container.Register(Component.For<TrendingMoviesActor>());
+
             MovieStreamingActorSystem = ActorSystem.Create("MovieStreamingActorSystem");
+
+            IDependencyResolver resolver = new WindsorDependencyResolver(container, MovieStreamingActorSystem);
+
             MovieStreamingActorSystem.ActorOf(Props.Create<PlaybackActor>(), "Playback");
 
             var logger = new LoggerConfiguration()

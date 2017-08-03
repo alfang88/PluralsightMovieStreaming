@@ -16,10 +16,10 @@ namespace MovieStreaming.Common.Actors
         private readonly Queue<string> _recentlyPlayedMovies;
         private const int NumberOfRecentMoviesToAnalyze = 5;
 
-        public TrendingMoviesActor()
+        public TrendingMoviesActor(ITrendingMovieAnalyzer analyzer)
         {
             _recentlyPlayedMovies = new Queue<string>(NumberOfRecentMoviesToAnalyze);
-            _trendAnalyzer = new SimpleTrendingMovieAnalyzer();
+            _trendAnalyzer = analyzer;
 
             Receive<IncrementPlayCountMessage>(message => HandleIncrementMessage(message));
         }
