@@ -8,3 +8,6 @@ C:\Dev\Pluralsight\ActorModelAkka.NET\MovieStreaming\MovieStreaming.Common\bin\D
 C:\Dev\Pluralsight\ActorModelAkka.NET\MovieStreaming\MovieStreaming.Common\bin\Debug\System.Collections.Immutable.xml
 C:\Dev\Pluralsight\ActorModelAkka.NET\MovieStreaming\MovieStreaming.Common\obj\Debug\MovieStreaming.Common.dll
 C:\Dev\Pluralsight\ActorModelAkka.NET\MovieStreaming\MovieStreaming.Common\obj\Debug\MovieStreaming.Common.pdb
+C:\Dev\Pluralsight\ActorModelAkka.NET\MovieStreaming\MovieStreaming.Common\bin\Debug\NLog.dll
+C:\Dev\Pluralsight\ActorModelAkka.NET\MovieStreaming\MovieStreaming.Common\bin\Debug\NLog.xml
+C:\Dev\Pluralsight\ActorModelAkka.NET\MovieStreaming\MovieStreaming.Common\obj\Debug\MovieStreaming.Common.csprojResolveAssemblyReference.cache

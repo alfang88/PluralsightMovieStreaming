@@ -4,6 +4,7 @@ using Akka.Actor;
 using MovieStreaming.Common;
 using MovieStreaming.Common.Actors;
 using MovieStreaming.Common.Messages;
+using Serilog;
 
 namespace MovieStreaming
 {
@@ -15,6 +16,13 @@ namespace MovieStreaming
         {
             MovieStreamingActorSystem = ActorSystem.Create("MovieStreamingActorSystem");
             MovieStreamingActorSystem.ActorOf(Props.Create<PlaybackActor>(), "Playback");
+
+            var logger = new LoggerConfiguration()
+                .WriteTo.Seq("http://localhost:5341")
+                .MinimumLevel.Information()
+                .CreateLogger();
+
+            Serilog.Log.Logger = logger;
 
             do
             {
