@@ -5,6 +5,10 @@ using MovieStreaming.Common;
 using MovieStreaming.Common.Actors;
 using MovieStreaming.Common.Messages;
 using Serilog;
+using Akka.DI.AutoFac;
+using Akka.DI.Core;
+using Autofac;
+using MovieStreaming.Common.Statistics;
 
 namespace MovieStreaming
 {
@@ -14,7 +18,17 @@ namespace MovieStreaming
 
         static void Main(string[] args)
         {
+            var builder = new ContainerBuilder();
+
+            builder.RegisterType<SimpleTrendingMovieAnalyzer>().As<ITrendingMovieAnalyzer>();
+            builder.RegisterType<TrendingMoviesActor>();
+
+            var container = builder.Build();
+
             MovieStreamingActorSystem = ActorSystem.Create("MovieStreamingActorSystem");
+
+            IDependencyResolver resolver = new AutoFacDependencyResolver(container, MovieStreamingActorSystem);
+
             MovieStreamingActorSystem.ActorOf(Props.Create<PlaybackActor>(), "Playback");
 
             var logger = new LoggerConfiguration()

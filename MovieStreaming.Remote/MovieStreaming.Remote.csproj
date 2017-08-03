@@ -36,6 +36,14 @@
       <HintPath>..\packages\Akka.1.2.3\lib\net45\Akka.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Akka.DI.AutoFac, Version=1.0.8.1, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Akka.DI.AutoFac.1.0.8\lib\net45\Akka.DI.AutoFac.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Akka.DI.Core, Version=1.0.8.24, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Akka.DI.Core.1.0.8\lib\net45\Akka.DI.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Akka.Logger.Serilog, Version=1.2.0.8, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Akka.Logger.Serilog.1.2.0\lib\net45\Akka.Logger.Serilog.dll</HintPath>
       <Private>True</Private>
@@ -46,6 +54,10 @@
     </Reference>
     <Reference Include="Akka.Serialization.Hyperion, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Akka.Serialization.Hyperion.1.2.3.43-beta\lib\net45\Akka.Serialization.Hyperion.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Autofac, Version=3.5.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.3.5.2\lib\net40\Autofac.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="DotNetty.Buffers, Version=0.0.0.0, Culture=neutral, PublicKeyToken=bc13ca065fa06c29, processorArchitecture=MSIL">
